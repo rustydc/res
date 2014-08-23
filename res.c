@@ -13,11 +13,11 @@ int main(int argc, char **argv) {
       CGDisplayModeRef modeRef = (CGDisplayModeRef) CFArrayGetValueAtIndex(array, i);
       size_t modeX = CGDisplayModeGetWidth(modeRef);
       size_t modeY = CGDisplayModeGetHeight(modeRef);
-      char isActive = (curX == modeX && curY == modeY) ? '*' : ' ';
+      bool isActive = curX == modeX && curY == modeY;
       if (isActive) {
         foundCurrent = true;
       }
-      printf("%c%2d: %4zu x %4zu\n", isActive, i, modeX, modeY);
+      printf("%c%2d: %4zu x %4zu\n", isActive ? '*' : ' ', i, modeX, modeY);
     }
 
     // List the current mode, if not already displayed.
