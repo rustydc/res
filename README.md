@@ -3,7 +3,7 @@ RES
 
 ```sh-session
 $ make
-  c++ res.m  -framework ApplicationServices -o res
+  clang res.c -Wall -framework ApplicationServices -o res
 $ ./res
     0: 2560 x 1600
     1: 1280 x  800
